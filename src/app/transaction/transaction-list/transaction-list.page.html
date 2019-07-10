@@ -19,30 +19,6 @@
 			<ion-label>Laufend</ion-label>
 		</ion-segment-button>
 	</ion-segment>
-	<!-- 
-	<ion-list>
-		<ion-item *ngFor="let trans of filteredTransactions">
-			<div class="trans-item">
-				<h3>{{ trans.item }}</h3>
-				<p>{{ filter == 'inbound' ? trans.ausleiherID : trans.verleiherID }}</p>
-				<p>{{ trans.startDate }} - {{ trans.endDate }}</p>
-				<div class="button">
-					<ion-button
-						*ngIf="trans.status == 'pending' && filter == 'inbound'"
-						(click)="changeTransactionStatus('accepted')"
-					>
-						Akzeptieren
-					</ion-button>
-					<ion-button
-						*ngIf="trans.status == 'pending' && filter == 'inbound'"
-						(click)="changeTransactionStatus('declined')"
-					>
-						Ablehnen
-					</ion-button>
-				</div>
-			</div>
-		</ion-item>
-	</ion-list> -->
 
 	<ion-list>
 		<div *ngFor="let trans of filteredTransactions">
