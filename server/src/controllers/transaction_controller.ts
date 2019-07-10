@@ -5,6 +5,7 @@ export const createTransaction = async (req: Request, res: Response) => {
 };
 
 export const getTransactions = async (req: Request, res: Response) => {
+	// alle transaktionen des akutellen users zurückgebben
 	const trans = [
 		{
 			verleiherID: '123',
@@ -35,21 +36,7 @@ export const getTransactions = async (req: Request, res: Response) => {
 };
 
 export const changeTransStatus = async (req: Request, res: Response) => {
-	// TODO status der transaktion ändern -> akzeptiert oder abgelehnt
+	// status der transaktion ändern -> akzeptiert oder abgelehnt
+	// req.body.status enthält neuen status der transaktion
 	res.json(req.body);
 };
-
-/*
-    _id?: string;
-    verleiherID: string;
-    ausleiherID: string;
-    startDate: Date;
-    endDate: Date;
-    status: string;    // ["pending", "accepted", "declined"]
-    review: {
-        verleiherRating: number;
-        ausleiherRating: number;
-        verleiherComment: string;
-        ausleiherComment: string;
-    }
-*/

@@ -28,7 +28,7 @@ export class TransactionListPage implements OnInit {
 		// current user: 123
 		if (this.filter == 'inbound') {
 			this.filteredTransactions = res.data.filter(
-				trans => trans.ausleiherID == '321' && trans.status == "'pending"
+				trans => trans.ausleiherID == '321' && trans.status == 'pending'
 			);
 		} else if (this.filter == 'outbound') {
 			this.filteredTransactions = res.data.filter(
