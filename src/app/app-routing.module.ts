@@ -20,7 +20,8 @@ const routes: Routes = [
 	{
 		path: 'main-list',
 		loadChildren: './main/main-list/main-list.module#MainListPageModule'
-	}
+	},
+  { path: 'transaction-list', loadChildren: './transaction/transaction-list/transaction-list.module#TransactionListPageModule' }
 ];
 
 @NgModule({

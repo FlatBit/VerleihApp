@@ -2,6 +2,7 @@ import * as express from 'express';
 import { json, urlencoded } from 'body-parser';
 import * as itemController from './controllers/item_controller';
 import * as userController from './controllers/user_controller';
+import * as transactionsController from './controllers/transaction_controller';
 import { checkAuth } from './middlewares/check_auth';
 import * as cors from 'cors';
 import { connectMongoDB } from './config/mongodb';
@@ -23,7 +24,10 @@ app.delete('/api/item/:itemID', checkAuth, itemController.deleteItem);
 // * USERS
 app.post('/api/newUser', userController.createUser);
 app.post('/api/signin', userController.login);
+
 // * TRANSACTIONS
+app.get('/api/transactions', transactionsController.getTransactions);
+app.post('/api/changeTransStatus', transactionsController.changeTransStatus);
 
 app.get('*', () => console.log('OOOOOO'));
 

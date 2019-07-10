@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-account-view',
@@ -9,7 +10,7 @@ export class AccountViewPage implements OnInit {
 	user: Object;
 	items: Object[];
 
-	constructor() {}
+	constructor(private router: Router) {}
 
 	ngOnInit() {
 		this.user = {
@@ -81,5 +82,6 @@ export class AccountViewPage implements OnInit {
 
 	showHistory() {
 		console.log('Show History');
+		this.router.navigate(['transaction-list']);
 	}
 }
