@@ -16,14 +16,12 @@ export class TransactionListPage implements OnInit {
 	ngOnInit() {}
 
 	segmentChanged({ target: { value } }) {
-		console.log(value);
 		this.filter = value;
 		this.fetchTransactions();
 	}
 
 	async fetchTransactions() {
 		const res = await axios.get('http://localhost:3000/api/transactions');
-		console.log(res.data);
 
 		// current user: 123
 		if (this.filter == 'inbound') {
@@ -41,11 +39,11 @@ export class TransactionListPage implements OnInit {
 		}
 	}
 
-	async changeTransactionStatus(status: String) {
-		const res = await axios.post(
-			'http://localhost:3000/api/changeTransStatus',
-			{ status }
-		);
+	async changeTransactionStatus(status: String, transId: String) {
+		await axios.post('http://localhost:3000/api/changeTransStatus', {
+			status,
+			id: transId
+		});
 		this.fetchTransactions();
 	}
 }

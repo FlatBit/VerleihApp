@@ -5,7 +5,7 @@ export const createTransaction = async (req: Request, res: Response) => {
 };
 
 export const getTransactions = async (req: Request, res: Response) => {
-	// alle transaktionen des akutellen users zurückgebben
+	// return all transactions from the current user
 	const trans = [
 		{
 			verleiherID: '123',
@@ -36,7 +36,7 @@ export const getTransactions = async (req: Request, res: Response) => {
 };
 
 export const changeTransStatus = async (req: Request, res: Response) => {
-	// status der transaktion ändern -> akzeptiert oder abgelehnt
-	// req.body.status enthält neuen status der transaktion
+	// change state of the transaction -> accept or decline
+	// req.body.status and req.body.transId
 	res.json(req.body);
 };

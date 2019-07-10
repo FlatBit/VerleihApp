@@ -46,7 +46,6 @@ export class SignupPage implements OnInit {
 			}
 			this.address = new Address(null, null, this.zip, this.city);
 
-			console.log('test');
 			this.user = new User(
 				null,
 				null,
